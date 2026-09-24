@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: telegram-message-bot
+    runtime: python
+    buildCommand: pip install -r telegram-message-bot/requirements.txt
+    startCommand: python telegram-message-bot/bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.13.5"
